@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>菜鸟教程(runoob.com)</title>
 		<script src="checkList.js"></script>
+		<script src="../2_jsFunction/define.js"></script>
 	</head>
 	<body>
 
@@ -163,5 +164,10 @@
 		<h2>JavaScript <b>this</b> 关键字</h2>
 		<button onclick="this.style.display='none'">点我后我就消失了</button>
 
+		<p>函数存储在变量后，变量可作为函数使用：</p>
+		<p id="demoF"></p>
+		<script>
+			document.getElementById("demoF").innerHTML = x(4, 3);
+		</script>
 	</body>
 </html>
