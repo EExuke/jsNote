@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+	<body>
+
+		<div id="div1">
+			<p id="p1">这是一个段落。</p>
+			<p id="p2">这是另外一个段落。</p>
+		</div>
+
+		<!--在尾部，创建新的 HTML 元素 (节点) - appendChild()-->
+		<script>
+			var para = document.createElement("p");
+			var node = document.createTextNode("这是一个新的段落。");
+			para.appendChild(node);
+			var element = document.getElementById("div1");
+			element.appendChild(para);
+		</script>
+
+		<!--在头部，创建新的 HTML 元素 (节点) - insertBefore()-->
+		<script>
+			var para = document.createElement("p");
+			var node = document.createTextNode("这是一个新的段落。");
+			para.appendChild(node);
+			var element = document.getElementById("div1");
+			var child = document.getElementById("p1");
+			element.insertBefore(para, child);
+		</script>
+
+		<!--移除已存在的元素-->
+		<script>
+			var parent = document.getElementById("div1");
+			var child = document.getElementById("p1");
+			parent.removeChild(child);
+		</script>
+
+		<!--替换 HTML 元素 - replaceChild() -->
+		<script>
+			var para = document.createElement("p");
+			var node = document.createTextNode("这是一个新的段落。");
+			para.appendChild(node);
+			var parent = document.getElementById("div1");
+			var child = document.getElementById("p2");
+			parent.replaceChild(para, child);
+		</script>
+
+	</body>
+</html>

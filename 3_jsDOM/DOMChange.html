@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+	<body>
+
+		<!--改变html输出流-->
+		<script>
+			document.write(Date());
+		</script>
+
+		<!--改变html内容-->
+		<p id="p1">Hello World!</p>
+		<script>
+			document.getElementById("p1").innerHTML="新文本!";
+		</script>
+		<p>以上段落通过脚本修改文本。</p>
+
+		<!--改变html属性-->
+		<img id="image" src="smiley.gif">
+		<script>
+			document.getElementById("image").src="landscape.jpg";
+		</script>
+
+		<!--改变html样式-->
+		<p id="p2">Hello World!</p>
+		<p id="p3">Hello World!</p>
+		<script>
+			document.getElementById("p3").style.color="blue";
+			document.getElementById("p3").style.fontFamily="Arial";
+			document.getElementById("p3").style.fontSize="larger";
+		</script>
+		<p>以上段落通过脚本修改。</p>
+
+		<!--使用事件-->
+		<h1 id="id1">我的标题 1</h1>
+		<button type="button"
+			onclick="document.getElementById('id1').style.color='red'">
+			点我!</button>
+
+	</body>
+</html>
