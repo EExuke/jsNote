@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+	<body>
+
+		<!--在字符串中不区分大小写找"runoob"-->
+		<script>
+			var str1 = "Visit RUnoob";
+			var patt1 = /runoob/i;
+			document.write(str1.match(patt1) + "<br \>");
+		</script>
+
+		<!--全文查找 "is"-->
+		<script>
+			var str2 = "Is this all there is?";
+			var patt2=/is/g;
+			document.write(str2.match(patt2) + "<br \>");
+		</script>
+
+		<!--全文查找和不区分大小写搜索 "is"-->
+		<script>
+			var str3 = "Is this all there is?";
+			var patt3 = /is/gi;
+			document.write(str3.match(patt3) + "<br \>");
+		</script>
+
+		<!--test()方法搜索字符串指定的值，根据结果并返回真或假-->
+		<script>
+			var patt4 = new RegExp("e");
+			document.write(patt4.test("The best things in life are free") + "<br \>");
+		</script>
+
+		<!--exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。-->
+		<script>
+			var patt5 = new RegExp("e");
+			document.write(patt5.exec("The best things in life are free") + "<br \>");
+		</script>
+
+	</body>
+</html>

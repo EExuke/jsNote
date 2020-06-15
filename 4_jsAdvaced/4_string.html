@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="utf-8"> 
+		<title>菜鸟教程(runoob.com)</title> 
+	</head>
+	<body>
+
+		<script>
+			var carname1="Volvo XC60";
+			var carname2='Volvo XC60';
+			var answer1='It\'s alright';
+			var answer2="He is called \"Johnny\"";
+			var answer3='He is called "Johnny"';
+			document.write(carname1 + "<br>")
+			document.write(carname2 + "<br>")
+			document.write(answer1 + "<br>")
+			document.write(answer2 + "<br>")
+			document.write(answer3 + "<br>")
+		</script>
+
+		<!--字符串（String）使用长度属性length来计算字符串的长度-->
+		<script>
+			var txt = "Hello World!";
+			document.write("<p>" + txt.length + "</p>");
+			var txt="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			document.write("<p>" + txt.length + "</p>");
+		</script>
+
+		<!--在字符串中查找字符串-->
+		<!--indexOf() 来定位字符串中某一个指定的字符首次出现的位置-->
+		<!--lastIndexOf() 方法在字符串末尾开始查找字符串出现的位置-->
+		<p id="p1">Click the button to locate where "locate" first occurs.</p>
+		<p id="p2">0</p>
+		<button onclick="myFunction1()">点我</button>
+		<script>
+			function myFunction1(){
+				var str=document.getElementById("p1").innerHTML;
+				var n=str.indexOf("locate");
+				document.getElementById("p2").innerHTML=n+1;
+			}
+		</script>
+
+		<!--内容匹配-->
+		<!--match()函数用来查找字符串中特定的字符，并且如果找到的话，则返回这个字符-->
+		<script>
+			var str="Hello world!";
+			document.write(str.match("world") + "<br>");
+			document.write(str.match("World") + "<br>");
+			document.write(str.match("world!"));
+		</script>
+
+		<!--替换内容-->
+		<!--replace() 方法在字符串中用某些字符替换另一些字符-->
+		<p>替换 "Microsoft" 为 "Runoob" :</p>
+		<button onclick="myFunction2()">点我</button>
+		<p id="demo1">请访问 Microsoft!</p>
+		<script>
+			function myFunction2() {
+				var str = document.getElementById("demo1").innerHTML; 
+				var txt = str.replace("Microsoft","Runoob");
+				document.getElementById("demo1").innerHTML = txt;
+			}
+		</script>
+
+		<!--字符串大小写转换使用函数 toUpperCase() / toLowerCase()-->
+		<script>
+			var txt="Hello World!";
+			document.write("<p>" + txt.toUpperCase() + "</p>");
+			document.write("<p>" + txt.toLowerCase() + "</p>");
+			document.write("<p>" + txt + "</p>");
+		</script>
+		<p>该方法返回一个新的字符串，源字符串没有被改变。</p>
+
+		<!--字符串使用split()函数转为数组,切片-->
+		<p id="demo2">单击按钮显示数组。</p>
+		<button onclick="myFunction3()">点我</button>
+		<script>
+			function myFunction3(){
+				var str="a,b,c,d,e,strf";
+				var n=str.split(",");
+				document.getElementById("demo2").innerHTML=n[0];
+			}
+		</script>
+
+	</body>
+</html>

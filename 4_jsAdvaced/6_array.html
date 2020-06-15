@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+	<body>
+
+		<!--创建数组, 为其赋值-->
+		<script>
+			var i;
+			var mycars = new Array();
+			mycars[0] = "Saab";
+			mycars[1] = "Volvo";
+			mycars[2] = "BMW";
+			for (i=0;i<mycars.length;i++){
+				document.write(mycars[i] + "<br />");
+			}
+		</script>
+
+		<!--创建新方法-->
+		<p id="demo1">单击按钮创建一个数组,调用 ucase（）方法, 并显示结果。</p>
+		<button onclick="myFunction1()">点我</button>
+		<script>
+			Array.prototype.myUcase=function(){
+				for (i=0;i<this.length;i++){
+					this[i]=this[i].toUpperCase();
+				}
+			}
+			function myFunction1(){
+				var fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+				fruits1.myUcase();
+				var x=document.getElementById("demo1");
+				x.innerHTML=fruits1;
+			}
+		</script>
+
+		<!--合并两个数组 - concat()-->
+		<script>
+			var hege = ["Cecilie", "Lone"];
+			var stale = ["Emil", "Tobias", "Linus"];
+			var children = hege.concat(stale);
+			document.write("<br />" + children);
+		</script>
+
+		<!--合并三个数组 - concat()-->
+		<script>
+			var parents = ["Jani", "Tove"];
+			var brothers = ["Stale", "Kai Jim", "Borge"];
+			var children = ["Cecilie", "Lone"];
+			var family = parents.concat(brothers, children);
+			document.write(family);
+		</script>
+
+		<!--用数组的元素组成字符串 - join()-->
+		<p id="demo2">点击按钮将数组作为字符串输出。</p>
+		<button onclick="myFunction2()">点我</button>
+		<script>
+			function myFunction2(){
+				var fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+				var x=document.getElementById("demo2");
+				x.innerHTML=fruits2.join();
+			}
+		</script>script
+
+		<!--删除数组的最后一个元素 - pop()-->
+		<p id="demo3">单击按钮删除数组的最后一个元素。</p>
+		<button onclick="myFunction3()">点我</button>
+		<script>
+			var fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+			function myFunction3(){
+				fruits3.pop();
+				var x=document.getElementById("demo3");
+				x.innerHTML=fruits3;
+			}
+		</script>
+
+		<!--数组的末尾添加新的元素 - push()-->
+		<p id="demo4">单击按钮给数组添加新的元素。</p>
+		<button onclick="myFunction4()">点我</button>
+		<script>
+			var fruits4 = ["Banana", "Orange", "Apple", "Mango"];
+			function myFunction4(){
+				fruits4.push("Kiwi")
+					var x=document.getElementById("demo4");
+				x.innerHTML=fruits4;
+			}
+		</script>
+
+		<!--将一个数组中的元素的顺序反转排序 - reverse()-->
+		<p id="demo5">单击按钮将数组反转排序。</p>
+		<button onclick="myFunction5()">点我</button>
+		<script>
+			var fruits5 = ["Banana", "Orange", "Apple", "Mango"];
+			function myFunction5(){
+				fruits5.reverse();
+				var x=document.getElementById("demo5");
+				x.innerHTML=fruits5;
+			}
+		</script>
+
+		<!--删除数组的第一个元素 - shift()-->
+		<p id="demo6">单击按钮删除数组的第一个元素。</p>
+		<p id="demo7"></p>
+		<button onclick="myFunction6()">点我</button>
+		<script>
+			var fruits6 = ["Banana", "Orange", "Apple", "Mango"];
+			function myFunction6(){
+				var delell = fruits6.shift();
+				var x=document.getElementById("demo6");
+				x.innerHTML= '删除后数组为：' +  fruits6;
+				document.getElementById("demo7").innerHTML= '删除的元素是：' +  delell;
+			}
+		</script>
+
+		<!--从一个数组中选择元素 - slice()-->
+		<p id="demo8">点击按钮截取数组下标 1 到 2 的元素。</p>
+		<button onclick="myFunction8()">点我</button>
+		<script>
+			function myFunction8(){
+				var fruits8 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+				var citrus = fruits8.slice(1,3);
+				var x=document.getElementById("demo8");
+				x.innerHTML=citrus;
+			}
+		</script>
+
+		<!--数组排序（按字母顺序升序）- sort()-->
+		<p id="demo9">单击按钮升序排列数组。</p>
+		<button onclick="myFunction9()">点我</button>
+		<script>
+			function myFunction9(){
+				var fruits9 = 	["Banana", "Orange", "Apple", "Mango"];
+				fruits9.sort();
+				var x=document.getElementById("demo9");
+				x.innerHTML=fruits9;
+			}
+		</script>
+
+		<!--数字排序（按数字顺序升序）- sort()-->
+		<p id="demo10">单击按钮升序排列数组。</p>
+		<button onclick="myFunction10()">点我</button>
+		<script>
+			function myFunction10(){
+				var points = [40,100,1,5,25,10];
+				points.sort(function(a,b){return a-b});
+				var x=document.getElementById("demo10");
+				x.innerHTML=points;
+			}
+		</script>
+
+		<!--数字排序（按数字顺序降序）- sort()-->
+		<p id="demo11">单击按钮降序排列数组。</p>
+		<button onclick="myFunction11()">点我</button>
+		<script>
+			function myFunction11(){
+				var points2 = [40,100,1,5,25,10];
+				points2.sort(function(a,b){return b-a});
+				var x=document.getElementById("demo11");
+				x.innerHTML=points2;
+			}
+		</script>
+
+		<!--在数组的第2位置添加一个元素 - splice()-->
+		<p id="demo12">点击按钮向数组添加元素。</p>
+		<button onclick="myFunction12()">点我</button>
+		<script>
+			function myFunction12(){
+				var fruits12 = ["Banana", "Orange", "Apple", "Mango"];
+				fruits12.splice(2,0,"Lemon","Kiwiwi");
+				var x=document.getElementById("demo12");
+				x.innerHTML=fruits12;
+			}
+		</script>
+
+		<!--转换数组到字符串 -toString()-->
+		<p id="demo13">点击按钮将数组转为字符串并返回。</p>
+		<button onclick="myFunction13()">点我</button>
+		<script>
+			function myFunction13(){
+				var fruits13 = ["Banana", "Orange", "Apple", "Mangoango"];
+				var str = fruits13.toString();
+				var x=document.getElementById("demo13");
+				x.innerHTML= str;
+			}
+		</script>
+
+		<!--在数组的开头添加新元素 - unshift()-->
+		<p id="demo14">单击按钮在数组中插入元素。</p>
+		<button onclick="myFunction14()">点我</button>
+		<script>
+			function myFunction14(){
+				var fruits14 = ["Banana", "Orange", "Apple", "Mango"];
+				fruits14.unshift("Lemon","Pineapple");
+				var x=document.getElementById("demo14");
+				x.innerHTML=fruits14;
+			}
+		</script>
+		<p><b>注意:</b> unshift()方法不能用于 Internet Explorer 8 之前的版本，插入的值将被返回成<em> undefined </em>。</p>
+
+	</body>
+</html>

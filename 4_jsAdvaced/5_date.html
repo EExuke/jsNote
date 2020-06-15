@@ -1,0 +1,102 @@
+i<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+		<script>
+			function startTime(){
+				var today=new Date();
+				var h=today.getHours();
+				var m=today.getMinutes();
+				var s=today.getSeconds(today);// 在小于10的数字前加一个‘0’
+				m=checkTime(m);
+				s=checkTime(s);
+				document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+				t=setTimeout(function(){startTime()},500);
+			}
+			function checkTime(i){
+				if (i<100){
+					i="0" + i;
+				}
+				return i;
+			}
+		</script>
+	</head>
+	<body onload="startTime()">
+
+		<!--使用 Date() 方法获得当日的日期。-->
+		<script>
+			var d=new Date();
+			document.write(d);
+		</script>
+
+		<!--使用 getFullYear() 获取年份-->
+		<p id="demo1">点击按钮获取今年的年份。</p>
+		<button onclick="myFunction1()">点我</button>
+		<script>
+			function myFunction1(){
+				var d = new Date();
+				var x = document.getElementById("demo1");
+				x.innerHTML=d.getFullYear();
+			}
+		</script>
+
+		 <!--getTime() 返回从 1970 年 1 月 1 日至今的毫秒数。-->
+		 <p id="demo2">单击按钮显示1970年1月1号至今的毫秒数。</p>
+		 <button onclick="myFunction2()">点我</button>
+		 <script>
+			function myFunction2(){
+				var d = new Date();
+				var x = document.getElementById("demo2");
+				x.innerHTML=d.getTime();
+			}
+		 </script>
+
+		 <!--如何使用 setFullYear() 设置具体的日期。-->
+		 <p id="demo3">单击按钮显示修改后的年月日。</p>
+		 <button onclick="myFunction3()">点我</button>
+		 <script>
+			function myFunction3(){
+					var d = new Date();
+					d.setFullYear(2020,10,3);
+					var x = document.getElementById("demo3");
+					x.innerHTML=d;
+			}
+		 </script>
+		 <p>记住 JavaScript 月份是从0至11。10是11月。</p>
+
+		 <!--如何使用 toUTCString() 将当日的日期（根据 UTC）转换为字符串。-->
+		 <p id="demo4">点击按钮把 utc 日期和时间转换成字符串。</p>
+		 <button onclick="myFunction4()">点我</button>
+		 <script>
+			function myFunction4(){
+				var d = new Date();
+				var x = document.getElementById("demo4");
+						x.innerHTML=d.toUTCString();
+			}
+		 </script>
+
+		 <!--如何使用 getDay() 和数组来显示星期，而不仅仅是数字。-->
+		 <p id="demo5">单击按钮显示今天周几</p>
+		 <button onclick="myFunction5()">点我</button>
+		 <script>
+			function myFunction5(){
+				var d = new Date();
+				var weekday=new Array(7);
+				weekday[0]="周日";
+				weekday[1]="周一";
+				weekday[2]="周二";
+				weekday[3]="周三";
+				weekday[4]="周四";
+				weekday[5]="周五";
+				weekday[6]="周六";
+				var x = document.getElementById("demo5");
+				x.innerHTML=weekday[d.getDay()];
+			}
+		</script>
+
+		<!--如何在网页上显示一个钟表-->
+		<div id="txt"></div>
+
+	</body>
+</html>

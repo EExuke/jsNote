@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+	<body>
+
+		<h2>JavaScript 对象</h2>
+
+		<p id="demo1"></p>
+
+		<!--在构造函数中添加新的属性-->
+		<script>
+			function Person1(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+				this.nationality = "English";
+			}
+
+			var myFather = new Person1("John", "Doe", 50, "blue");
+			var myMother = new Person1("Sally", "Rally", 48, "green");
+
+			document.getElementById("demo1").innerHTML =
+			"我父亲的国籍是 " + myFather.nationality + "。我母亲的国籍是 " + myMother.nationality;
+		</script>
+
+		<!--使用 prototype 属性就可以给对象的构造函数添加新的属性-->
+		<h2>JavaScript 对象</h2>
+		<p id="demo2"></p>
+
+		<script>
+			function Person2(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+			}
+
+			Person2.prototype.nationality = "English";
+
+			var myFather = new Person2("John", "Doe", 50, "blue");
+			document.getElementById("demo2").innerHTML = "我父亲对国籍是 " + myFather.nationality;
+		</script>
+
+		<!--使用 prototype 属性就可以给对象的构造函数添加新的方法-->
+		<h2>JavaScript 对象</h2>
+
+		<p id="demo3"></p>
+
+		<script>
+			function Person3(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+			}
+
+			Person3.prototype.name = function() {
+				return this.firstName + " " + this.lastName
+			};
+
+			var myFather = new Person3("John", "Doe", 50, "blue");
+			document.getElementById("demo3").innerHTML =
+			"我对父亲是 " + myFather.name();
+		</script>
+
+	</body>
+</html>
